@@ -312,7 +312,20 @@ body {
 .services {
     display: flex;
     position: relative;
+}
+.services--line {
     margin-bottom: 50px;
+}
+.services.services--line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 9999;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #e5e5e5;
 }
 .services__item {
     flex: 1 1 0;
@@ -336,14 +349,25 @@ body {
     line-height: 1.6;
     color: var(--text-light-gray);
 }
-.services.line::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 9999;
-    display: block;
+
+/* Devices */
+.section.section--devices {
+    background: url(../img/feature/feature_bg.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 0;
+}
+.devices {
+    position: relative;
     width: 100%;
-    height: 1px;
-    background-color: #e5e5e5;
+    max-width: 600px;
+    margin: -30px auto 0;
+}
+.devices__item {
+    display: block;
+}
+.devices__item--iphone {
+    position: absolute;
+    right: -80px;
+    bottom: -80px;
 }
