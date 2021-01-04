@@ -31,6 +31,15 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
+.unselectable {
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none;   /* Chrome/Safari/Opera */
+    -khtml-user-select: none;    /* Konqueror */
+    -moz-user-select: none;      /* Firefox */
+    -ms-user-select: none;       /* Internet Explorer/Edge */
+    user-select: none;           /* Non-prefixed version, currently
+                                    not supported by any browser */
+}
 
 /* Header */
 .header {
@@ -194,6 +203,10 @@ body {
 .section {
     padding: 90px 0;
 }
+.section--gray {
+    background-color: #f8f8f8;
+    padding: 70px 0;
+}
 .section__header {
     width: 100%;
     max-width: 970px;
@@ -221,7 +234,7 @@ body {
     background-color: var(--active-red);
     margin: 38px auto;
 }
-.header__text {
+.section__text {
     font-family: 'Roboto', sans-serif;
     font-size: 15px;
     line-height: 1.6;
@@ -240,7 +253,7 @@ body {
 }
 .about__image {
     position: relative;
-    background: linear-gradient(to bottom, var(--active-red), var(--active-orange));
+    background: linear-gradient(to bottom, var(--active-red), var(--active-orange), 50%);
     transition: transform .2s linear;
 }
 .about__image img{
@@ -315,6 +328,7 @@ body {
 }
 .services--line {
     margin-bottom: 50px;
+    padding-bottom: 25px;
 }
 .services.services--line::after {
     content: "";
@@ -330,7 +344,7 @@ body {
 .services__item {
     flex: 1 1 0;
     position: relative;
-    padding: 0 40px 40px 90px;
+    padding: 0 40px 15px 90px;
 }
 .services__icon {
     position: absolute;
@@ -370,4 +384,129 @@ body {
     position: absolute;
     right: -80px;
     bottom: -80px;
+}
+
+/* Whatwedo */
+.whatwedo {
+    display: flex;
+}
+.whatwedo__item {
+    flex: 1 1 0;
+}
+.whatwedo__photo {
+    display: block;
+}
+
+/* Accordion */
+.accordion {
+    display: flex;
+    flex-direction: column;
+}
+.accordion__item {
+    border: 1px solid #e5e5e5;
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+.accordion__title {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    border-bottom: 1px solid transparent;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: var(--text-gray);
+    border-bottom: 1px solid #e5e5e5;
+}
+.accordion__item[open] {
+    border-bottom: 1px solid #e5e5e5;
+}
+.accordion__item[open] .accordion__title::after {
+    transform: rotate(180deg);
+    animation: spoiler 1s;
+}
+.accordion__title::after {
+    content: "";
+    display: block;
+    width: 22px;
+    height: 12px;
+    margin-left: auto;
+    background: no-repeat center 
+    url('../img/service_2/arrow.png');
+}
+.accordion__icon {
+    margin-right: 15px;
+}
+.accordion__text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-light-gray);
+    padding: 0 20px;
+}
+/* Mention */
+.mention {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+}
+.mention::before,
+.mention::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 22px;
+    background: no-repeat center url(../img/mention/arrow_left.png);
+}
+.mention::before {
+    left: 20px;
+}
+.mention::after {
+    right: 20px;
+    transform: translateY(-50%) rotate(180deg);
+}
+.mention_icon {
+    display: block;
+    margin-right: 60px;
+}
+.mention__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    max-width: 750px;
+}
+.mention__content p {
+    margin: 0 0 13px 0;
+}
+.mention__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    font-style: italic;    
+    line-height: 1.5;
+    color: var(--text-light-gray);
+}
+.mention__autor {
+    font-family: 'Kaushan Script', cursive;
+    font-size: 24px;
+    color: var(--text-gray);
+}
+.mention__autor::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 60px;
+    height: 3px;
+    margin-right: 10px;
+    background-color: var(--active-red);
 }
