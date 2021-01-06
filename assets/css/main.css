@@ -207,6 +207,9 @@ body {
     background-color: #f8f8f8;
     padding: 70px 0;
 }
+.section--brands {
+    padding: 55px 0;    
+}
 .section__header {
     width: 100%;
     max-width: 970px;
@@ -253,7 +256,7 @@ body {
 }
 .about__image {
     position: relative;
-    background: linear-gradient(to bottom, var(--active-red), var(--active-orange), 50%);
+    background: linear-gradient(to bottom, var(--active-red), var(--active-orange));
     transition: transform .2s linear;
 }
 .about__image img{
@@ -509,4 +512,96 @@ body {
     height: 3px;
     margin-right: 10px;
     background-color: var(--active-red);
+}
+
+/* Teamcards */
+.teamcards {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+.teamcards__item {
+    position: relative;
+    background-color: var(--bg--green);
+    width: 100%;
+    max-width: 380px;
+}
+.teamcards__item:hover .teamsocial {
+    display: flex;
+}
+.teamcards__item:hover .teamcards_img {
+    opacity: .1;
+}
+.teamcards__item:hover .teamcards__photo {
+    transform: translate3d(-10px, -10px, 0);
+}
+.teamcards__photo {
+    position: relative;
+    background: linear-gradient(to bottom, var(--active-red), var(--active-orange));
+    cursor: pointer;
+    transition: transform .2s linear;
+}
+.teamcards_img {
+    display: block;
+    transition: opacity .1s linear;
+}
+.teamcards__name {
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-gray);
+    text-transform: uppercase;
+}
+.teamcards__post {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--text-light-gray);
+    position: absolute;
+    bottom: -74px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* Teamsocial */
+.teamsocial {
+    display: none;
+    width: 224px;
+    height: 56px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);    
+}
+.teamsocial__item {
+    flex: 1 1 0;
+    display: flex;
+    background-color: var(--active-orange);
+    transition: background-color .2s linear;
+}
+.teamsocial__item:not(:last-child) {
+    border-right: 1px solid #f9bd87;
+}
+.teamsocial__icon {
+    width: 26px;
+    height: 26px;
+    margin: auto;
+    fill: var(--active-red);
+    transition: fill .2s linear;    
+}
+.teamsocial__item:hover {
+    background-color: var(--active-red);
+}
+.teamsocial__item:hover .teamsocial__icon {
+    fill: #fff;
+}
+
+/* Brands */
+.brands {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
