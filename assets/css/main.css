@@ -210,6 +210,9 @@ body {
 .section--brands {
     padding: 55px 0;    
 }
+.section--review {
+    padding: 40px 0 130px 0;
+}
 .section__header {
     width: 100%;
     max-width: 970px;
@@ -526,13 +529,13 @@ body {
     width: 100%;
     max-width: 380px;
 }
-.teamcards__item:hover .teamsocial {
+.teamcards__photo:hover .teamsocial {
     display: flex;
 }
-.teamcards__item:hover .teamcards_img {
+.teamcards__photo:hover .teamcards_img {
     opacity: .1;
 }
-.teamcards__item:hover .teamcards__photo {
+.teamcards__photo:hover {
     transform: translate3d(-10px, -10px, 0);
 }
 .teamcards__photo {
@@ -604,4 +607,104 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+/* Works */
+.works {
+    display: flex;
+}
+.works__col {
+    flex: 1 1 0;
+}
+.works__item {
+    position: relative;
+    background: linear-gradient(to bottom, var(--active-red), var(--active-orange));
+}
+.works__img {
+    display: block;
+    transition: opacity .2s linear;
+    max-width: 100%;
+}
+.works__content {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+    color: var(--text-white);
+}
+.works__icon {
+    margin-bottom: 15px;
+}
+.works__name {
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 9px;
+}
+.works__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 300;
+}
+.works__item:hover .works__img {
+    opacity: .1;
+} 
+.works__item:hover .works__content {
+    display: block;
+}
+
+/* Clients */
+.section--clients {
+    background: center no-repeat url(../img/clients/bg.jpg);
+    background-size: cover;
+    padding: 110px 0 55px;
+}
+.clients {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 85px;
+}
+.clients__item {
+    position: relative;
+    width: 50%;
+    padding: 10px 50px 70px 180px;
+}
+.clients__photo {
+    position: absolute;
+    top: 0;
+    left: 40px;
+}
+.clients__name {
+    text-transform: uppercase;
+    font-size: 14px;
+    color: var(--text-gray);
+    margin-bottom: 7px;
+}
+.clients__post {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-style: italic;
+    font-weight: 300;  
+    color: var(--text-gray);  
+}
+.clients__post::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--active-red);
+    margin: 14px 0 20px;
+}
+.clients__text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    font-weight: 400;  
+    color: var(--text-light-gray);      
 }
