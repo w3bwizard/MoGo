@@ -207,12 +207,9 @@ body {
 .section {
     padding: 90px 0;
 }
-.section--gray {
-    background-color: #f8f8f8;
-    padding: 70px 0;
-}
 .section--brands {
-    padding: 55px 0;    
+    padding: 55px 0;   
+    background-color: #f8f8f8; 
 }
 .section--review {
     padding: 40px 0 130px 0;
@@ -452,47 +449,39 @@ body {
     color: var(--text-light-gray);
     padding: 0 20px;
 }
-/* Mention */
-.mention {
+/* Reviews */
+.reviews {
+    width: 100%;
+    padding: 70px 0;
+    background-color: #f8f8f8;
+}
+.reviews__item {
     position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 120px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
-    justify-content: center;
-    height: 150px;
+    justify-content: space-between;
 }
-.mention::before,
-.mention::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 12px;
-    height: 22px;
-    background: no-repeat center url(../img/mention/arrow_left.png);
-}
-.mention::before {
-    left: 20px;
-}
-.mention::after {
-    right: 20px;
-    transform: translateY(-50%) rotate(180deg);
-}
-.mention_icon {
+.reviews__icon {
     display: block;
     margin-right: 60px;
 }
-.mention__content {
+.reviews__content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     width: 100%;
     max-width: 750px;
+    margin-top: 30px;
 }
-.mention__content p {
+.reviews__content p {
     margin: 0 0 13px 0;
 }
-.mention__text {
+.reviews__text {
     font-family: 'Roboto', sans-serif;
     font-size: 24px;
     font-weight: 300;
@@ -500,12 +489,12 @@ body {
     line-height: 1.5;
     color: var(--text-light-gray);
 }
-.mention__autor {
+.reviews__autor {
     font-family: 'Kaushan Script', cursive;
     font-size: 24px;
     color: var(--text-gray);
 }
-.mention__autor::before {
+.reviews__autor::before {
     content: "";
     display: inline-block;
     vertical-align: middle;
@@ -514,23 +503,45 @@ body {
     margin-right: 10px;
     background-color: var(--active-red);
 }
-
+.reviews__arrow {
+    display: block;
+    width: 12px;
+    height: 22px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    background-color: transparent;
+    background: center no-repeat url(../img/mention/arrow_left.png);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.reviews__arrow--back{
+    left: 15px;
+}
+.reviews__arrow--forward{
+    right: 15px;
+    transform: translateY(-50%) rotate(180deg);
+}
 /* Teamcards */
 .teamcards {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 90px;
 }
 .teamcards__item {
     position: relative;
     background-color: var(--bg--green);
-    width: 100%;
-    max-width: 380px;
+    width: 31,66666%;
+    margin-right: 15px;
+    margin-bottom: 90px;
+}
+.teamcards__item:last-child {
+    margin-right: 0;
 }
 .teamcards__photo:hover .teamsocial {
     display: flex;
 }
-.teamcards__photo:hover .teamcards_img {
+.teamcards__photo:hover .teamcards__img {
     opacity: .1;
 }
 .teamcards__photo:hover {
@@ -542,7 +553,8 @@ body {
     cursor: pointer;
     transition: transform .2s linear;
 }
-.teamcards_img {
+.teamcards__img {
+    max-width: 100%;
     display: block;
     transition: opacity .1s linear;
 }
@@ -555,6 +567,7 @@ body {
     font-weight: 400;
     color: var(--text-gray);
     text-transform: uppercase;
+    white-space: nowrap;
 }
 .teamcards__post {
     font-family: 'Roboto', sans-serif;
@@ -566,6 +579,7 @@ body {
     bottom: -74px;
     left: 50%;
     transform: translateX(-50%);
+    white-space: nowrap;
 }
 /* Teamsocial */
 .teamsocial {
@@ -1056,6 +1070,20 @@ body {
     .accordion {
         margin-left: 15px;
     }
+    /* Reviews */
+    .reviews {
+        padding: 40px 0;
+    }
+    .reviews__text {
+        font-size: 20px;
+    }
+    /* Teamcards */
+    .teamcards__name {
+        bottom: -40px;
+    }
+    .teamcards__post {
+        bottom: -60px;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1092,6 +1120,10 @@ body {
         width: 80%;
         margin: 0 auto;
     }    
+    /* Reviews */
+    .reviews__item {
+        padding: 0 85px;
+    }
 }
 @media (max-width: 768px) {
     /* Section */
@@ -1165,7 +1197,29 @@ body {
     .accordion {
         width: 90%;
 
-    }        
+    }      
+    /* Reviews */
+    .reviews__item {
+        flex-direction: column;
+    }
+    .reviews__content {
+        text-align: center;
+    }
+    .reviews__icon {
+        margin: 0;
+    }
+    .reviews__text {
+        font-size: 18px;
+    }
+    /* Teamcards */
+    .teamcards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .teamcards__item {
+        margin-bottom: 80px;
+        margin-right: 0;
+    } 
 }
 @media (max-width: 414px) {
     /* Intro */
@@ -1203,6 +1257,9 @@ body {
     /* Accordion */
     .accordion {
         width: 100%;
-
-    }         
+    } 
+    /* Reviews */
+    .reviews__item {
+        padding: 0 45px;
+    }
 }
