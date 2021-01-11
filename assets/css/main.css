@@ -55,6 +55,11 @@ body {
     justify-content: space-between;
 }
 
+/* Page */
+.page {
+    overflow: hidden;
+}
+
 /* Top navigation */
 .logo {
     font-size: 30px;
@@ -617,6 +622,7 @@ body {
 /* Brands */
 .brands {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
 }
@@ -624,6 +630,7 @@ body {
 /* Works */
 .works {
     display: flex;
+    flex-wrap: wrap;
 }
 .works__col {
     flex: 1 1 0;
@@ -689,6 +696,7 @@ body {
     padding: 10px 50px 70px 180px;
 }
 .clients__photo {
+    display: block;
     position: absolute;
     top: 0;
     left: 40px;
@@ -729,17 +737,19 @@ body {
     flex-wrap: wrap;
 }
 .blog__item {
-    flex: 1 1 0;
+    width: 31%;
     display: flex;
     flex-direction: column;
+    margin-right: 30px;
 }
-.blog__item:not(:first-child) {
-    margin-left: 30px;
+.blog__item:last-child {
+    margin-right: 0;
 }
 .blog__preview {
     position: relative;
 }
 .blog__img {
+    max-width: 100%;
     display: block;
 }
 .blog__date {
@@ -769,7 +779,6 @@ body {
 }
 .blog__content {
     padding: 19px 0 4px;
-    border-bottom: 1px solid #e5e5e5;
 }
 .blog__title {
     font-size: 14px;
@@ -798,7 +807,8 @@ body {
     line-height: 1.6;
     font-weight: 300;  
     font-style: italic;
-    color: var(--text-light-gray);    
+    color: var(--text-light-gray);
+    border-top: 1px solid #e5e5e5;    
 }
 .blog__views::before {
     content: "";
@@ -1050,6 +1060,7 @@ body {
     border-top: 1px solid #e5e5e5;
     font-size: 14px;
     color: var(--text-gray);
+    text-align: center;
 }
 .copyright span {
     color: var(--active-red);
@@ -1083,6 +1094,22 @@ body {
     }
     .teamcards__post {
         bottom: -60px;
+    }
+    /* Footer */
+    .footer {
+        justify-content: flex-start;
+    }
+    .mogo {
+        max-width: 100%;
+    }
+    .blogs, .instagram {
+        margin-left: 0;
+    }
+    .blogs {
+        max-width: 60%;
+    }
+    .blogs__item {
+        max-width: 100%;
     }
 }
 
@@ -1124,6 +1151,50 @@ body {
     .reviews__item {
         padding: 0 85px;
     }
+    /* brands */
+    .brands__item {
+        width: 33%;
+    }
+    .brands__item img {
+        display: block;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+    /* Works */
+    .works__col {
+        flex: none;
+        width: 50%;
+    }
+    /* Clients */
+    .clients {
+        margin-top: 15px;
+    }
+    .clients__item {
+        width: 100%;
+    }
+    /* Blog */
+    .blog {
+        flex-direction: column;
+    }
+    .blog__item {
+        width: 95%;
+        margin: 0 0 30px 15px;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+    .blog__item:last-child {
+        margin: 0 0 0 15px;
+    }
+    .blog__preview {
+        margin-right: 15px;
+    }
+    .blog__img {
+        max-width: none;
+    }
+    .blog__content {
+        padding: 0;
+    }
+
 }
 @media (max-width: 768px) {
     /* Section */
@@ -1196,7 +1267,6 @@ body {
     /* Accordion */
     .accordion {
         width: 90%;
-
     }      
     /* Reviews */
     .reviews__item {
@@ -1220,6 +1290,44 @@ body {
         margin-bottom: 80px;
         margin-right: 0;
     } 
+    /* Clients */
+    .clients__item {
+        text-align: center;
+        padding: 10px 50px 70px 50px;
+    }
+    .clients__post::after {
+        margin: 14px auto 20px;
+    }
+    .clients__photo {
+        position: static;
+        margin: 0 auto 15px;
+    }
+    /* Blog */
+    .blog__item {
+        margin: 0 0 15px 0;
+    }
+    .blog__item:last-child {
+        margin: 0;
+    }
+    .blog__preview {
+        width: 40%;
+        flex-shrink: 0;
+    }
+    .blog__img {
+        width: 100%;
+    }
+    /* Map */
+    .section--map {
+        padding: 80px 0;
+    }
+    /* Footer */
+    .footer {
+        flex-direction: column;
+    }
+    /* Blogs */
+    .blogs, .instagram {
+        max-width: 100%;
+    }
 }
 @media (max-width: 414px) {
     /* Intro */
@@ -1261,5 +1369,49 @@ body {
     /* Reviews */
     .reviews__item {
         padding: 0 45px;
+    }
+    /* brands */
+    .brands__item {
+        width: 50%;
+    }    
+    /* Works */
+    .works__col {
+        width: 100%;
+    }
+    /* Clients */
+    .clients__item {
+        padding: 10px 0 0;
+    }
+    /* Blog */
+    .blog__item {
+        width: 100%;
+        flex-direction: column;
+    }
+    .blog__preview {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+    /* Footer */
+    .footer {
+        align-items: center;
+    }
+    /* MoGo */
+    .mogo__title {
+        text-align: center;
+    }
+    /* Blogs */
+    .blogs__title {
+        text-align: center;
+    }
+    .blogs__item {
+        padding: 0 0 4px 140px;
+    }
+    /* Instagram */
+    .instagram__inner {
+        max-width: 270px;
+        margin: 0 auto;
+    }
+    .instagram {
+        text-align: center;
     }
 }
